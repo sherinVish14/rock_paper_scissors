@@ -1,7 +1,7 @@
 # Rock-Paper-Scissors Game
 
 ## Overview
-This is a simple Rock-Paper-Scissors game that allows users to play against an AI opponent. The game is implemented using HTML, CSS, and JavaScript.
+This is a simple Rock-Paper-Scissors game that allows users to play against an AI opponent. The game is implemented using HTML, CSS, and JavaScript. This simple application was completed in less than 15 minutes using Copilot.
 
 ## Files
 - `src/index.html`: The main HTML document that sets up the game structure.
