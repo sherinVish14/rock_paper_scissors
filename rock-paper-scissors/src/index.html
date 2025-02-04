@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors Game</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock-Paper-Scissors</h1>
+        <div class="user-input">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+        <div class="result">
+            <h2>Your Choice: <span id="user-choice"></span></h2>
+            <h2>AI Choice: <span id="ai-choice"></span></h2>
+            <h2>Result: <span id="game-result"></span></h2>
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
+    <script>
+        function getAIChoice() {
+            const choices = ['Rock', 'Paper', 'Scissors'];
+            const randomIndex = Math.floor(Math.random() * choices.length);
+            return choices[randomIndex];
+        }
+
+        function getResult(userChoice, aiChoice) {
+            if (userChoice === aiChoice) {
+                return 'It\'s a tie!';
+            } else if (
+                (userChoice === 'Rock' && aiChoice === 'Scissors') ||
+                (userChoice === 'Paper' && aiChoice === 'Rock') ||
+                (userChoice === 'Scissors' && aiChoice === 'Paper')
+            ) {
+                return 'You win!';
+            } else {
+                return 'You lose!';
+            }
+        }
+
+        document.getElementById('rock').addEventListener('click', function() {
+            const userChoice = 'Rock';
+            const aiChoice = getAIChoice();
+            document.getElementById('user-choice').textContent = userChoice;
+            document.getElementById('ai-choice').textContent = aiChoice;
+            document.getElementById('game-result').textContent = getResult(userChoice, aiChoice);
+        });
+        document.getElementById('paper').addEventListener('click', function() {
+            const userChoice = 'Paper';
+            const aiChoice = getAIChoice();
+            document.getElementById('user-choice').textContent = userChoice;
+            document.getElementById('ai-choice').textContent = aiChoice;
+            document.getElementById('game-result').textContent = getResult(userChoice, aiChoice);
+        });
+        document.getElementById('scissors').addEventListener('click', function() {
+            const userChoice = 'Scissors';
+            const aiChoice = getAIChoice();
+            document.getElementById('user-choice').textContent = userChoice;
+            document.getElementById('ai-choice').textContent = aiChoice;
+            document.getElementById('game-result').textContent = getResult(userChoice, aiChoice);
+        });
+    </script>
+</body>
+</html>
